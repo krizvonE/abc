@@ -1,19 +1,23 @@
-
-
-<body class="bg-secondary">
-  <div class="container-fluid center ">
-    
-          <ngb-accordion ngb-accordion [closeOthers]="true" activeIds="static-1">
-            <ngb-panel title="One" >
-              <ng-template ngbPanelContent>
-                ad
-              </ng-template>
-            </ngb-panel>
-            <ngb-panel title="Two">
-              <ng-template ngbPanelContent>
-                vass
+<div class="container center" >
+  <div class="row">
+    <div class="col ">
+      <ngb-accordion [closeOthers]="true" >
+            <ngb-panel *ngFor="let genero of generos; let id=index" title="{{genero.nombre}}"   >
+              <ng-template ngbPanelContent >
+                <div [ngClass]="{'bg-primary': (id == 0), 'bg-warning': (id == 1), 'bg-dark': (id == 2)}">
+                  <div *ngIf="id == 0">
+                    <a href="https://en.wikipedia.org/wiki/The_Doors">The Doors</a>
+                  </div>
+                  <div *ngIf="id == 1">
+                    <a href="https://en.wikipedia.org/wiki/Pink_Floyd">Pink Floyd</a>
+                  </div>
+                  <div *ngIf="id == 2">
+                    <a href="https://es.wikipedia.org/wiki/Enjambre_(banda)">Enjambre</a>
+                  </div>
+                </div>
               </ng-template>
             </ngb-panel>
           </ngb-accordion>
+    </div>
   </div>
-</body>
+</div>

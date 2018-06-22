@@ -12,7 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'genero', component: GeneroComponent},
+  {path: 'genero/:id', component: GeneroComponent},
   {path: 'artista', component: ArtistaComponent},
   {path: 'pais', component: PaisComponent}
 ];

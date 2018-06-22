@@ -1,3 +1,14 @@
-<p>
-  pais works!
-</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ngb-accordion [closeOthers]="true">
+        <ngb-panel *ngFor="let banda of bandas " title="{{banda.nombre}}" [disabled]="false">
+          <ng-template ngbPanelContent>
+            {{banda.pais}} {{banda.genero}}
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+</div>

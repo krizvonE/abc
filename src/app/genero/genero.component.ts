@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-genero',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneroComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  constructor(public activatedRoute: ActivatedRoute) { 
+    this.id = this.activatedRoute.snapshot.params['id'];
+    console.log(this.id);
+  }
 
   ngOnInit() {
   }
+
+  generos = [
+    {nombre: 'Psychedelic rock'},
+    {nombre: 'Psychedelic rock'},
+    {nombre: 'Indie rock'}
+  ];
+
 
 }
