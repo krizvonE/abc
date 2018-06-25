@@ -2,17 +2,11 @@
   <div class="row">
     <div class="col ">
       <ngb-accordion [closeOthers]="true" >
-            <ngb-panel *ngFor="let genero of generos; let id=index" title="{{genero.nombre}}"   >
+            <ngb-panel *ngFor="let grupos of bandasArc.grupos; let id=index" title="{{grupos.nombre}}"   >
               <ng-template ngbPanelContent >
-                <div [ngClass]="{'bg-primary': (id == 0), 'bg-warning': (id == 1), 'bg-dark': (id == 2)}">
-                  <div *ngIf="id == 0">
-                    <a href="https://en.wikipedia.org/wiki/The_Doors">The Doors</a>
-                  </div>
-                  <div *ngIf="id == 1">
-                    <a href="https://en.wikipedia.org/wiki/Pink_Floyd">Pink Floyd</a>
-                  </div>
-                  <div *ngIf="id == 2">
-                    <a href="https://es.wikipedia.org/wiki/Enjambre_(banda)">Enjambre</a>
+                <div *ngFor="let banda of grupos.bandas; let id=index">
+                  <div [ngClass]="{'bg-primary': (id == 0), 'bg-warning': (id == 1)}">
+                    <a routerLink="/genero/{{banda.id}}">{{banda.nombre}}</a>
                   </div>
                 </div>
               </ng-template>

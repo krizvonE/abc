@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BandasService } from '../bandas.service';
 
 
 @Component({
@@ -7,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pais.component.css']
 })
 export class PaisComponent implements OnInit {
- 
-  constructor() {}
+  pos: number;
+  
+  bandas = [];
+
+  constructor(public bandasService: BandasService) {
+    this.bandas = this.bandasService.getBandas();
+  }
 
   ngOnInit() {
   }
-
-  bandas = [
-    {nombre: 'The Doors', pais: 'USA', genero: 'Psychedelic rock'},
-    {nombre: 'Pink Floyd', pais: 'England', genero: 'Psychedelic rock'},
-    {nombre: 'Enjambre', pais: 'Mexico', genero: 'Indie rock'}
-  ];
+  
 
 }

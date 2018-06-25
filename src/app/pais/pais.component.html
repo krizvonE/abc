@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col">
       <ngb-accordion [closeOthers]="true">
-        <ngb-panel *ngFor="let banda of bandas " title="{{banda.nombre}}" [disabled]="false">
+        <ngb-panel *ngFor="let banda of bandas" title="{{banda.nombre}}" [disabled]="false">
           <ng-template ngbPanelContent>
             {{banda.pais}} {{banda.genero}}
           </ng-template>
